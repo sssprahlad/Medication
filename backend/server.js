@@ -1,6 +1,6 @@
 const express = require('express');
-const { open } = require("sqlite");
-const sqlite3 = require('sqlite3');
+const { open } = require("better-sqlite3");
+const sqlite3 = require('better-sqlite3');
 const path = require("path");
 const cors = require('cors');
 const bcrypt = require('bcrypt');

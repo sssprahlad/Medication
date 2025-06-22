@@ -8,6 +8,7 @@ const Patient = () => {
   const fetchData = async () => {
     const response = await fetch("http://localhost:3000/medication");
     const result = await response.json();
+
     if (Array.isArray(result) && result.length > 0) {
       const lastItem = result[result.length - 1]; 
       setData({
