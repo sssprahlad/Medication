@@ -207,3 +207,13 @@
 .med-submit-btn:hover {
   background-color: #2563eb;
 }
+
+@media (max-width: 576px) {
+.calendar-row-container{
+  display: flex;
+    flex-direction: column;
+}
+.calendar-list{
+    margin: 1rem 0;
+}
+  }

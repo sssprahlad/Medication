@@ -36,7 +36,7 @@ const Notifications = () => {
   const handleSendAlert = async () => {
     if(name && email && customMessage && reminderTime && alertDelay){
       try {
-        const res = await fetch("http://localhost:3000/send-alert", {
+        const res = await fetch("https://medication-ugnu.onrender.com/send-alert", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -164,12 +164,7 @@ const Notifications = () => {
                 <option value="20">20 Minutes</option>
                 <option value="25">25 Minutes</option>
                 <option value="30">30 Minutes</option>
-                <option value="35">35 Minutes</option>
-                <option value="40">40 Minutes</option>
-                <option value="45">45 Minutes</option>
-                <option value="50">50 Minutes</option>
-                <option value="55">55 Minutes</option>
-                <option value="60">60 Minutes</option>
+                
               </select>
             </div>
 

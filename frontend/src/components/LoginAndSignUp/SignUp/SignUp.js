@@ -22,7 +22,7 @@ const SignUp = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try{
-    const response = await fetch("http://localhost:3000/signup", {
+    const response = await fetch("https://medication-ugnu.onrender.com/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -97,6 +97,7 @@ const SignUp = () => {
 
           <button type="submit">Register</button>
           {error && <p className="error">{error}</p>}
+          <p>Already have an account? <a style={{color:"blue", marginTop:"2rem"}} href="/">Log in</a></p>
         </form>
       </div>
     </div>

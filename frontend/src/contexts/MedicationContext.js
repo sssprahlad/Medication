@@ -6,7 +6,7 @@ export const MedicationProvider = ({ children }) => {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [medicationData, setMedicationData] = useState({});
   const [checkedDateBoolean, setCheckedDateBoolean] = useState(false);
-  // const [adherenceDataBoolean, setAdherenceDataBoolean] = useState(false);    
+   const [adherenceDataBoolean, setAdherenceDataBoolean] = useState(false);    
 
   
   
@@ -26,6 +26,8 @@ export const MedicationProvider = ({ children }) => {
         setMedicationData,
         checkedDateBoolean,
         setCheckedDateBoolean,
+        adherenceDataBoolean,
+        setAdherenceDataBoolean,
      
        
           }}

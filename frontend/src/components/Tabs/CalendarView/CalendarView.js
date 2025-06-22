@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from "react";
 import "./CalendarView.css";
 import MedicationCalendar from "../../MyCalender/calendar";
-import { useDispatch } from "react-redux";
-import { setAdherenceDataBoolean } from "../../redux/reducer/user";
+import { useDispatch ,useSelector} from "react-redux";
+//import { setAdherenceDataBoolean } from "../../redux/reducer/user";
+import { useMedication } from "../../../contexts/MedicationContext";
 
 const CalendarView = () => {
 
   const [status, setStatus] = useState(false);
 const dispatch = useDispatch();
+const {setAdherenceDataBoolean} = useMedication();
+//const adherenceDataBoolean = useSelector((state) => state.user.adherenceDataBoolean);
   const user_name = localStorage.getItem("user_name");
   const today = new Date();
 const formattedDate = today.toLocaleDateString("en-US", {
@@ -15,6 +18,9 @@ const formattedDate = today.toLocaleDateString("en-US", {
   month: "long",
   day: "numeric",     
 });
+
+console.log(status);
+
 
   const AdherenceForm = () => {
     const [formData, setFormData] = useState({
@@ -33,8 +39,11 @@ const formattedDate = today.toLocaleDateString("en-US", {
   
     const handleSubmit = async (e) => {
       e.preventDefault();
+      setStatus(true);
+      //dispatch(setAdherenceDataBoolean(true));
+      setAdherenceDataBoolean(true);
       console.log("Submitting:", formData);
-      const responce = await fetch("http://localhost:3000/adherence", {
+      const responce = await fetch("https://medication-ugnu.onrender.com/adherence", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -43,20 +52,20 @@ const formattedDate = today.toLocaleDateString("en-US", {
       });
       const data = await responce.json();
       console.log(data);
-      dispatch(setAdherenceDataBoolean(true));
+      //dispatch(setAdherenceDataBoolean(true));
       setFormData({
         adherence_rate: "",
         current_streak: "",
         missed_this_month: "",
         taken_this_week: "",
       });
-      setStatus(true);
+    
     };
 
     useEffect(() => {
       const timer = setTimeout(() => {
         setStatus(false);
-      }, 3000);
+      }, 1000);
       return () => clearTimeout(timer);
     }, [status]);
 
@@ -86,7 +95,7 @@ const formattedDate = today.toLocaleDateString("en-US", {
         <button className="custom-submit-button" type="submit">
           Submit
         </button>
-        {status && <p>Adherence status submitted successfully!</p>}
+        {status ? <p style={{color:"green",fontSize:"1rem",margin:"1rem 0"}}>Adherence status submitted successfully!</p> : null}
       </form>
     );
   };
@@ -108,8 +117,11 @@ const formattedDate = today.toLocaleDateString("en-US", {
   
     const handleSubmit = async (e) => {
       e.preventDefault();
+      setStatus(true);
+      setAdherenceDataBoolean(true);
+      //dispatch(setAdherenceDataBoolean(true));
       console.log("Submitted data:", formData);
-      const responce = await fetch("http://localhost:3000/medication", {
+      const responce = await fetch("https://medication-ugnu.onrender.com/medication", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -118,13 +130,14 @@ const formattedDate = today.toLocaleDateString("en-US", {
       });
       const data = await responce.json();
       console.log(data);
-      setStatus(true);
+     
       setFormData({
         day_streak: "",
         today_status: "",
         monthly_rate: "",
       });
-      };
+      // setStatus(true);
+    };
   
     return (
       <form className="med-form" onSubmit={handleSubmit}>
@@ -170,7 +183,8 @@ const formattedDate = today.toLocaleDateString("en-US", {
         </div>
   
         <button type="submit" className="med-submit-btn">Submit</button>
-        {status && <p>Medication status submitted successfully!</p>}
+
+        {status ? <p style={{color:"green",fontSize:"1rem",margin:"1rem 0"}}>Medication status submitted successfully!</p> : null}
       </form>
     );
   };
@@ -188,12 +202,14 @@ const formattedDate = today.toLocaleDateString("en-US", {
         <div className="calendar-view-container">
             <div className="calendar-left">
                 <h1 className="calendar-title">Medication Calendar Overview</h1>
+                <div className="calendar-row-container"> 
                 <MedicationCalendar />
                 <div className="calendar-list">  
                     <h1 className="calendar-list-item">{`✅ Medication taken`}</h1>  
                     <h1 className="calendar-list-item">{`❌ Medication missed`}</h1>  
                     <h1 className="calendar-list-item" style={{display: "flex",alignItems: "center",gap: "10px"}}> <p className="dot"></p>{`Medication remaining`}</h1>  
                 </div>    
+                </div>
             </div>
            
            <div className="calendar-right">

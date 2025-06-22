@@ -30,7 +30,7 @@ const RecentActivity = () => {
   
 
   const fetchCheckedDates = () => {
-    fetch("http://localhost:3000/dates")
+    fetch("https://medication-ugnu.onrender.com/dates")
       .then((res) => res.json())
       .then((data) => {
         console.log(data,"res data");

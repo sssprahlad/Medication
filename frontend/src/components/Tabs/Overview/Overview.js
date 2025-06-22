@@ -6,7 +6,7 @@ const Overview = () => {
 
 
       const fetchData = async () => {
-        const response = await fetch("http://localhost:3000/adherence");
+        const response = await fetch("https://medication-ugnu.onrender.com/adherence");
         const result = await response.json();
         console.log(result,"result");
         const lastItem = result[result.length - 1]; 

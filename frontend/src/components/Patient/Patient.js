@@ -6,7 +6,7 @@ const Patient = () => {
 
  
   const fetchData = async () => {
-    const response = await fetch("http://localhost:3000/medication");
+    const response = await fetch("https://medication-ugnu.onrender.com/medication");
     const result = await response.json();
 
     if (Array.isArray(result) && result.length > 0) {

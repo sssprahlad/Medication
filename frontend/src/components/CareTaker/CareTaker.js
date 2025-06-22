@@ -1,14 +1,18 @@
 import React, { useEffect, useState } from "react";
 import "./CareTaker.css";
 import { useSelector } from "react-redux";
+import { useMedication } from "../../contexts/MedicationContext";
 
 const CareTaker = () => {
   const [data, setData] = useState({adherence_rate: 0, current_streak: 0, missed_this_month: 0, taken_this_week: 0});
- const adherenceDataBoolean = useSelector((state) => state.adherenceDataBoolean);
+ //const adherenceDataBoolean = useSelector((state) => state.adherenceDataBoolean);
+ //console.log(adherenceDataBoolean,"adherenceDataBoolean");
+ const {adherenceDataBoolean} = useMedication();
  const user_name = localStorage.getItem("user_name"); 
-  console.log(data,adherenceDataBoolean,"data");
+  //console.log(data,adherenceDataBoolean,"data");
+  console.log(adherenceDataBoolean,"adherenceDataBoolean");
   const fetchData = async () => {
-    const response = await fetch("http://localhost:3000/adherence");
+    const response = await fetch("https://medication-ugnu.onrender.com/adherence");
     const result = await response.json();
     const lastItem = result[result.length - 1];
     setData({
@@ -21,7 +25,7 @@ const CareTaker = () => {
   
   useEffect(() => {
     fetchData(); 
-  }, []);
+  }, [adherenceDataBoolean]);
   
   
 
