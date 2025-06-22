@@ -1,0 +1,81 @@
+.nav-bg-color {
+  background: white;
+  padding: 15px;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.logo-part-container {
+  display: flex;
+  justify-content: start;
+  gap: 10px;
+}
+.logo-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: flex-start;
+}
+.logo-text {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0;
+}
+.logo-sub-text {
+  font-size: 0.875rem;
+  margin: 0px;
+}
+.logo-container {
+  --gradient-direction: to right;
+  --gradient-color1: #22c55e;
+  --gradient-color2: #3b82f6;
+  background: linear-gradient(var(--gradient-direction), var(--gradient-color1), var(--gradient-color2));
+  height: 3rem;
+  width: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+}
+.patient-care-taker-button {
+  border: 1px solid lightgray;
+  padding: 5px 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+}
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.patient-care-taker-button:hover {
+  background: rgb(249, 247, 247);
+}
+
+.btn-container{
+  display:flex;
+  align-items: center;
+  gap:10px;
+}
+.user-name{
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  background:plum;
+  font-weight: 600;
+  height: 2.5rem;
+  width: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius:50%;
+}

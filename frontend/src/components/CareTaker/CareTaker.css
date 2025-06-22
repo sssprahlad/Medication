@@ -1,0 +1,77 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.dashboard-container {
+  background: linear-gradient(to right, #22c55e, #3b82f6);
+  border-radius: 1rem;
+  padding: 2rem;
+  color: white;
+  font-family: sans-serif;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.icon-box {
+  width: 4rem;
+  height: 4rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.title-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+
+.title-container h2 {
+  font-size: 1.875rem; 
+  font-weight: bold;
+}
+
+.title-container p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.125rem; 
+}
+
+.care-taker-grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .care-taker-grid-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.sub-box-container {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  backdrop-filter: blur(4px);
+}
+
+.value-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.label-text {
+  color: rgba(255, 255, 255, 0.8);
+}

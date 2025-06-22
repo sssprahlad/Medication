@@ -1,0 +1,46 @@
+.patient-dashboard{
+      background: linear-gradient(to right, #3b82f6,  #22c55e);
+  border-radius: 1rem;
+  padding: 2rem;
+  color: white;
+  font-family: sans-serif;
+}
+.patient-text-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+.card-header{
+      display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.patient-grid-container{
+ display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+@media (min-width: 768px) {
+  .patient-grid-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.sub-box-container {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  backdrop-filter: blur(4px);
+}
+
+.value-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.label-text {
+  color: rgba(255, 255, 255, 0.8);
+}

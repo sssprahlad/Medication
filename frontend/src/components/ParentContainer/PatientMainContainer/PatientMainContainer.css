@@ -1,0 +1,208 @@
+.patient-main-container{
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.row-container {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* padding: 0 20px; */
+    
+}
+
+
+
+
+.today-medication-container{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.8rem;
+}
+
+.tracker-card {
+    background: #fff;
+    border: 1px solid #d1d5db;
+    border-radius: 12px;
+    /* max-width: 600px; */
+    width: 60%;
+    /* margin: 0px auto; */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  }
+  
+  .tracker-header {
+    padding: 24px;
+    /* border-bottom: 1px solid #e5e7eb; */
+  }
+  
+  .tracker-title {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 600;
+    gap: 8px;
+  }
+  
+  .check-icon {
+    width: 35px;
+    height: 35px;
+    stroke: #ebeef3 !important; 
+    font-size: 2rem;
+  }
+  
+  .tracker-body {
+    padding: 24px;
+    padding-top: 0;
+  }
+  
+  .medication-card,
+  .upload-card {
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    margin-bottom: 24px;
+    transition: box-shadow 0.3s;
+  }
+  
+  .medication-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .medication-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+  }
+  
+  .medication-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .pill-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #dbeafe;
+    color: #2563eb;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+  }
+  
+  .medication-title {
+    font-weight: 500;
+    margin: 0;
+  }
+  
+  .medication-subtitle {
+    font-size: 14px;
+    color: #6b7280;
+    margin: 0;
+  }
+  
+  .time-badge {
+    display: inline-flex;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 9999px;
+    gap: 4px;
+    color: #111827;
+  }
+  
+  .upload-card {
+    border-style: dashed;
+    border-width: 2px;
+    border-color: #cbd5e1;
+    text-align: center;
+  }
+  
+  .upload-content {
+    padding: 24px;
+  }
+  
+  .image-icon {
+    width: 48px;
+    height: 48px;
+    color: #9ca3af;
+    margin-bottom: 12px;
+  }
+  
+  .hidden-input {
+    display: none;
+  }
+  
+  .photo-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border: 1px solid #d1d5db;
+    background: #f9fafb;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 6px;
+    margin-top: 16px;
+  }
+  
+  .camera-icon {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .submit-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: #16a34a;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .submit-button:hover {
+    background-color: #15803d;
+  }
+  
+  .check-icon {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .medication-calendar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    width: 35%;
+    /* max-width: 400px; */
+    flex-shrink: 0;
+  }
+
+  .checked-date {
+    background-color: #d0f0c0;
+    border-radius: 50%;
+  }
+  

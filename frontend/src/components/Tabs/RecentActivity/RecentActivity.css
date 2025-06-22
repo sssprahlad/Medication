@@ -1,0 +1,104 @@
+.recent-activity-container{
+    background: #fff;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    padding:1.5rem;
+}
+
+.recent-activity-title{
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.recent-activity-list-container{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    
+}
+
+
+.history-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background-color: #fff;
+  }
+  
+  .history-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .icon-circle {
+    width: 40px;
+    height: 40px;
+    background-color: #d1fae5; /* light green */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .icon-green {
+    width: 20px;
+    height: 20px;
+    color: #16a34a; /* green */
+  }
+  
+  .date-text {
+    font-weight: 500;
+    margin: 0;
+  }
+  
+  .time-text {
+    font-size: 0.875rem;
+    color: #6b7280; /* gray-500 */
+    margin: 0;
+  }
+  
+  .history-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 9999px;
+    border: 1px solid #d1d5db;
+    background-color: #f9fafb;
+    color: #111827;
+  }
+  
+  .badge-icon {
+    width: 14px;
+    height: 14px;
+    margin-right: 4px;
+  }
+  
+  .badge.completed {
+    background-color: #e5e7eb;
+    border: none;
+    color: #111827;
+  }
+  
+  .pending {
+    background-color: rgba(239, 68, 68, 0.984);
+    color: white;
+  }
+  .bg-pending{
+    background-color: rgb(254 226 226 );
+    color:  rgba(239, 68, 68, 0.984);
+  }

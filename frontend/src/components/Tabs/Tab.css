@@ -1,0 +1,26 @@
+.tabs-container{
+    background: #f1f6fb;
+    margin:35px 0px;
+}
+
+.tab-button {
+  padding: 8px 0;
+  border: none;
+  border-bottom: 3px solid transparent;
+  background: none;
+  color: #333;
+  font-size: .875rem;
+  cursor: pointer;
+  outline: none;
+ /* width: 100px; */
+ width: 25%;
+ font-weight: 500;
+}
+
+.tab-button.active {
+  color: 215.4 16.3% 46.9%;
+  font-weight: bold;
+   box-shadow: 0 0 #0000, 0 0 #0000, 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+   background: white !important;
+   border-radius: 8px;
+}

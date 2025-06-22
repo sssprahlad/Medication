@@ -1,0 +1,208 @@
+.welcome-container{
+    padding: 1.5rem;
+    
+}
+
+.welcome-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .welcome-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    border-radius: 16px;
+    background: linear-gradient(to bottom right, #3b82f6, #22c55e);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .heart-icon {
+    color: white;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .welcome-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #111827; 
+    margin-bottom: 1rem;
+  }
+  
+  .welcome-subtitle {
+    font-size: 1.25rem;
+    color: #6b7280; 
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .role-wrapper {
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, #ebf8ff, #d1fae5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+  }
+  
+  .role-container {
+    max-width: 1024px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .role-header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #111827;
+  }
+  
+  .role-header p {
+    font-size: 1.2rem;
+    color: #6b7280;
+    max-width: 650px;
+    margin: 0 auto;
+  }
+  
+  .role-icon-bg {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(to bottom right, #3b82f6, #10b981);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem auto;
+  }
+  
+  .role-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .role-card {
+    border: 2px solid transparent;
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    background-color: #fff;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  }
+  
+  .role-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .role-card-header {
+    text-align: center;
+    padding-bottom: 1rem;
+  }
+  
+  .role-card-header h3 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin: 0.5rem 0;
+  }
+  
+  .role-card-header p {
+    color: #6b7280;
+    font-size: 1rem;
+  }
+  
+  .role-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem auto;
+  }
+  
+  .blue-bg {
+    background-color: #dbeafe;
+  }
+  
+  .green-bg {
+    background-color: #d1fae5;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+    color: #4b5563;
+    font-size: 0.9rem;
+  }
+  
+  ul li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  ul li::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  
+  .role-card.blue ul li::before {
+    background-color: #3b82f6;
+  }
+  
+  .role-card.green ul li::before {
+    background-color: #16a34a;
+  }
+  
+  .blue-btn {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    margin-top: 1rem;
+    width: 100%;
+    cursor: pointer;
+  }
+  
+  .green-btn {
+    background-color: #16a34a;
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    margin-top: 1rem;
+    width: 100%;
+    cursor: pointer;
+  }
+  
+  .blue-btn:hover {
+    background-color: #1d4ed8;
+  }
+  
+  .green-btn:hover {
+    background-color: #15803d;
+  }
+  
+  .role-footer {
+    margin-top: 3rem;
+    color: #6b7280;
+    font-size: 0.875rem;
+  }
+  .role-list{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
