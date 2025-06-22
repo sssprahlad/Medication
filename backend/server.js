@@ -1,6 +1,5 @@
 const express = require('express');
-const { open } = require("sqlite3");
-const sqlite3 = require('sqlite3').verbose();
+const { open } = require("sqlite");
 const path = require("path");
 const cors = require('cors');
 const bcrypt = require('bcrypt');
