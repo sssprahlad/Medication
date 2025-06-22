@@ -23,7 +23,7 @@ const initializeDBAndServer = async () => {
   try {
     db = await open({
       filename: dbPath,
-      driver: sqlite3.Database,
+      driver: require('sqlite3').verbose(),
     });
 
     
