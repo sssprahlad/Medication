@@ -1,20 +1,21 @@
 const express = require('express');
-const { open } = require("better-sqlite3");
 const path = require("path");
 const cors = require('cors');
 const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
-const app = express();
 const multer = require("multer");
 const upload = multer({ dest: "uploads/" });
 const nodemailer = require("nodemailer");
 const cron = require("node-cron");
+const jwt = require('jsonwebtoken');
 
+const { open } = require("sqlite");
+const sqlite3 = require('sqlite3');
+
+const app = express();
 const PORT = 3000;
 
-
 app.use(cors());
-app.use(express.json());
+app.use(express.json()); 
 
 const dbPath = path.join(__dirname, "userDetails.db");
 let db = null;
@@ -23,10 +24,8 @@ const initializeDBAndServer = async () => {
   try {
     db = await open({
       filename: dbPath,
-      driver: require('better-sqlite3'),
+      driver: sqlite3.Database,
     });
-
-    
     await db.run(`
       CREATE TABLE IF NOT EXISTS userDetails (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -123,6 +122,7 @@ app.post("/signup", async (request, response) => {
 // Login
 app.post("/login", async (request, response) => {
   const { user_name, password } = request.body;
+  console.log(user_name, password);
   const selectUserQuery = `SELECT * FROM users WHERE user_name = ?`;
   const dbUser = await db.get(selectUserQuery, [user_name]);
 
