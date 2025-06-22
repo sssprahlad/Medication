@@ -1,5 +1,5 @@
 const express = require('express');
-const { open } = require("sqlite");
+const { open } = require("better-sqlite3");
 const path = require("path");
 const cors = require('cors');
 const bcrypt = require('bcrypt');
@@ -23,7 +23,7 @@ const initializeDBAndServer = async () => {
   try {
     db = await open({
       filename: dbPath,
-      driver: require('sqlite3').verbose(),
+      driver: require('better-sqlite3'),
     });
 
     
