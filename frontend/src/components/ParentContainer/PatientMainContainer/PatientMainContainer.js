@@ -97,7 +97,7 @@ const PatientMainContainer = () => {
   
     console.log("Sending FormData payload...");
   
-    fetch("http://localhost:3000/dates", {
+    fetch("https://medication-ugnu.onrender.com/dates", {
       method: "POST",
       body: formData, // Don't set Content-Type manually
     })
