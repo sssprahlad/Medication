@@ -23,8 +23,8 @@ const SignUp = () => {
     e.preventDefault();
     try {
       const response = await fetch(
-        "http://localhost:3000/signup",
-        // "https://medication-ugnu.onrender.com/signup",
+        // "http://localhost:3000/signup",
+        "https://medication-ugnu.onrender.com/signup",
         {
           method: "POST",
           headers: {
