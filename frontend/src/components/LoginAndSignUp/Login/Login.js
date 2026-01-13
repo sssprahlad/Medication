@@ -3,8 +3,8 @@ import "./Login.css";
 import { Link, useNavigate, Navigate } from "react-router-dom";
 
 const Login = () => {
-    
   const [user_name, setUser_name] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigator = useNavigate();
@@ -12,15 +12,20 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // "https://medication-ugnu.onrender.com/login",
 
-    try{
-      const response = await fetch("https://medication-ugnu.onrender.com/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ user_name, password }),
-      });
+    try {
+      const response = await fetch(
+        "http://localhost:3000/login",
+
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email, password }),
+        }
+      );
       const data = await response.json();
       console.log(data);
       if (response.ok) {
@@ -32,12 +37,12 @@ const Login = () => {
         setError(data.error);
       }
       setUser_name("");
+      setEmail("");
       setPassword("");
-    }catch(error){
+    } catch (error) {
       console.log(error.message);
       setError("backend api is not running");
-      }
-  
+    }
   };
 
   const token = localStorage.getItem("token");
@@ -55,9 +60,10 @@ const Login = () => {
               <label htmlFor="user_name">Username</label>
               <input
                 type="text"
-                id="user_name"
-                value={user_name}
-                onChange={(e) => setUser_name(e.target.value)}
+                id="email"
+                value={email}
+                // onChange={(e) => setUser_name(e.target.value)}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your username"
                 required
               />

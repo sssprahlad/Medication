@@ -21,33 +21,36 @@ const SignUp = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try{
-    const response = await fetch("https://medication-ugnu.onrender.com/signup", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
-    const data = await response.json();
-    if (response.ok) {
-      console.log("User created successfully");
-      navigate("/");
-      setFormData({
-        user_name: "",
-        email: "",
-        age: "",
-        password: "",
-      });
-      setError(data.message);
-    } else {
-      setError(data.error);
+    try {
+      const response = await fetch(
+        "http://localhost:3000/signup",
+        // "https://medication-ugnu.onrender.com/signup",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+      const data = await response.json();
+      if (response.ok) {
+        console.log("User created successfully");
+        navigate("/");
+        setFormData({
+          user_name: "",
+          email: "",
+          age: "",
+          password: "",
+        });
+        setError(data.message);
+      } else {
+        setError(data.error);
+      }
+    } catch (error) {
+      console.log(error.message);
+      setError("backend api is not running");
     }
-  }catch(error){
-    console.log(error.message);
-    setError("backend api is not running");
-    }
-
   };
 
   return (
@@ -97,7 +100,12 @@ const SignUp = () => {
 
           <button type="submit">Register</button>
           {error && <p className="error">{error}</p>}
-          <p>Already have an account? <a style={{color:"blue", marginTop:"2rem"}} href="/">Log in</a></p>
+          <p>
+            Already have an account?{" "}
+            <a style={{ color: "blue", marginTop: "2rem" }} href="/">
+              Log in
+            </a>
+          </p>
         </form>
       </div>
     </div>
