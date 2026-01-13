@@ -76,9 +76,7 @@ const Navbar = () => {
           >
             Logout
           </button>
-          <p className="user-name">
-            {user_name?.user_name?.charAt(0).toUpperCase()}
-          </p>
+          <p className="user-name">{user_name?.charAt(0).toUpperCase()}</p>
           <div
             className="patient-care-taker-button"
             onClick={() => setButtonAction(!buttonAction)}
