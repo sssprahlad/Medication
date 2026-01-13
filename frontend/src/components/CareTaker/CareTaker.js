@@ -4,32 +4,35 @@ import { useSelector } from "react-redux";
 import { useMedication } from "../../contexts/MedicationContext";
 
 const CareTaker = () => {
-  const [data, setData] = useState({adherence_rate: 0, current_streak: 0, missed_this_month: 0, taken_this_week: 0});
- //const adherenceDataBoolean = useSelector((state) => state.adherenceDataBoolean);
- //console.log(adherenceDataBoolean,"adherenceDataBoolean");
- const {adherenceDataBoolean} = useMedication();
- const user_name = localStorage.getItem("user_name"); 
+  const [data, setData] = useState({
+    adherence_rate: 0,
+    current_streak: 0,
+    missed_this_month: 0,
+    taken_this_week: 0,
+  });
+  //const adherenceDataBoolean = useSelector((state) => state.adherenceDataBoolean);
+  //console.log(adherenceDataBoolean,"adherenceDataBoolean");
+  const { adherenceDataBoolean } = useMedication();
+  const user_name = localStorage.getItem("user_name");
   //console.log(data,adherenceDataBoolean,"data");
-  console.log(adherenceDataBoolean,"adherenceDataBoolean");
+  console.log(adherenceDataBoolean, "adherenceDataBoolean");
   const fetchData = async () => {
-    const response = await fetch("https://medication-ugnu.onrender.com/adherence");
+    const response = await fetch(
+      "https://medication-ugnu.onrender.com/adherence"
+    );
     const result = await response.json();
     const lastItem = result[result.length - 1];
     setData({
-      adherence_rate: lastItem.adherence_rate,
-      current_streak: lastItem.current_streak,
-      missed_this_month: lastItem.missed_this_month,
-      taken_this_week: lastItem.taken_this_week,
+      adherence_rate: lastItem?.adherence_rate || 0,
+      current_streak: lastItem?.current_streak || 0,
+      missed_this_month: lastItem?.missed_this_month || 0,
+      taken_this_week: lastItem?.taken_this_week || 0,
     });
   };
-  
-  useEffect(() => {
-    fetchData(); 
-  }, [adherenceDataBoolean]);
-  
-  
 
-  
+  useEffect(() => {
+    fetchData();
+  }, [adherenceDataBoolean]);
 
   return (
     <div className="">
@@ -61,19 +64,19 @@ const CareTaker = () => {
 
         <div class="care-taker-grid-container">
           <div class="sub-box-container">
-            <div class="value-text">{data.adherence_rate}%</div>
+            <div class="value-text">{data?.adherence_rate}%</div>
             <div class="label-text">Adherence Rate</div>
           </div>
           <div class="sub-box-container">
-            <div class="value-text">{data.current_streak}</div>
+            <div class="value-text">{data?.current_streak}</div>
             <div class="label-text">Current Streak</div>
           </div>
           <div class="sub-box-container">
-            <div class="value-text">{data.missed_this_month}</div>
+            <div class="value-text">{data?.missed_this_month}</div>
             <div class="label-text">Missed This Month</div>
           </div>
           <div class="sub-box-container">
-            <div class="value-text">{data.taken_this_week}</div>
+            <div class="value-text">{data?.taken_this_week}</div>
             <div class="label-text">Taken This Week</div>
           </div>
         </div>

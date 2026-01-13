@@ -30,12 +30,12 @@ const Login = () => {
       const data = await response.json();
       console.log(data);
       if (response.ok) {
-        localStorage.setItem("token", data.jwtToken);
-        localStorage.setItem("user_name", data.user_name);
-        localStorage.setItem("email", data.email);
+        localStorage.setItem("token", data?.jwtToken);
+        localStorage.setItem("user_name", data?.user);
+        localStorage.setItem("email", data?.email);
         navigator("/welcome", { replace: true });
       } else {
-        setError(data.error);
+        setError(data?.error);
       }
       setUser_name("");
       setEmail("");

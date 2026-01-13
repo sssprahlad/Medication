@@ -11,10 +11,10 @@ const Overview = () => {
         console.log(result,"result");
         const lastItem = result[result.length - 1]; 
         setData({
-          adherence_rate: lastItem.adherence_rate,
-          current_streak: lastItem.current_streak,
-          missed_this_month: lastItem.missed_this_month,
-          taken_this_week: lastItem.taken_this_week,
+          adherence_rate: lastItem?.adherence_rate,
+          current_streak: lastItem?.current_streak,
+          missed_this_month: lastItem?.missed_this_month,
+          taken_this_week: lastItem?.taken_this_week,
         });
     
       };
@@ -98,7 +98,7 @@ const Overview = () => {
       <div className="progress-body">
         <div className="progress-top">
           <span>Overall Progress</span>
-          <span>{data.adherence_rate}%</span>
+          <span>{data?.adherence_rate}%</span>
         </div>
 
         <div
@@ -106,11 +106,11 @@ const Overview = () => {
           role="progressbar"
           aria-valuemin={0}
           aria-valuemax={100}
-          aria-valuenow={ Number(data.adherence_rate)}
+          aria-valuenow={ Number(data?.adherence_rate)}
         >
           <div
             className="progress-bar-fill"
-            style={{ width: `${Number(data.adherence_rate)}%` }}
+            style={{ width: `${Number(data?.adherence_rate)}%` }}
           ></div>
         </div>
 
